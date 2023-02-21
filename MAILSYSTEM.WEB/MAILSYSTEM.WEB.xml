@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAILSYSTEM.WEB</name>
+    </assembly>
+    <members>
+        <member name="M:MAILSYSTEM.WEB.AuthSetup.ApiOptionsSetup.Configure(MAILSYSTEM.INFRASTRUCTURE.Authentication.ApiOptions)">
+            <summary>
+            Bind Api configuration from application configuration  file.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:MAILSYSTEM.WEB.AuthSetup.JwtOptionsSetup.Configure(MAILSYSTEM.INFRASTRUCTURE.Authentication.JwtOptions)">
+            <summary>
+            Bind Jwt Configuration Section.
+            </summary>
+            <param name="options"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAILSYSTEM.INFRASTRUCTURE</name>
+    </assembly>
+    <members>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Authentication.ApiProvider.GenerateApiKey(MAILSYSTEM.DOMAIN.Entities.Company)">
+            <summary>
+            Generate Api Key.
+            </summary>
+            <param name="company"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Authentication.ApiProvider.BuildApiKey">
+            <summary>
+            Build Api key.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Authentication.JwtOptions">
+            <summary>
+            Jwt Options Class.
+            </summary>
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyZipUpdate">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyZipUpdate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyZipUpdate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyZipUpdate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Repositories.ListItemRepository">
+            <summary>
+            ListItem Repository Implementation.
+            </summary>
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.UnitOfWork">
+            <summary>
+            Unit Of Work Interface Implementation.
+            </summary>
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.UnitOfWork.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Save changes to the database.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.UnitOfWork.UpdateAuditableEntities">
+            <summary>
+            Update Auditable Entities on add or update.
+            </summary>
+        </member>
+    </members>
+</doc>

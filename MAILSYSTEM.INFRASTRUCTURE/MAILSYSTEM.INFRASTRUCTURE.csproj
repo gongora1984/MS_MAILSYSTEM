@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Authentication\IPermissionService.cs" />
+    <Compile Remove="Authentication\PermissionAuthorizationHandler.cs" />
+    <Compile Remove="Authentication\PermissionAuthorizationPolicyProvider.cs" />
+    <Compile Remove="Authentication\PermissionRequirement.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MAILSYSTEM.DOMAIN\MAILSYSTEM.DOMAIN.csproj" />
+  </ItemGroup>
+
+</Project>

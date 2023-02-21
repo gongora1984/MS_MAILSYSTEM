@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAILSYSTEM.APPLICATION</name>
+    </assembly>
+    <members>
+        <member name="M:MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyByEmail.GetCompanyByEmailQueryHandler.Handle(MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyByEmail.GetCompanyByEmailQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get Company By Email handler.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyById.GetCompanyByIdQueryHandler.Handle(MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyById.GetCompanyByIdQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get Company By Id handler.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyByName.GetCompanyByNameQueryHandler.Handle(MAILSYSTEM.APPLICATION.Persistence.Companies.Queries.CompanyByName.GetCompanyByNameQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get Company By Name handler.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

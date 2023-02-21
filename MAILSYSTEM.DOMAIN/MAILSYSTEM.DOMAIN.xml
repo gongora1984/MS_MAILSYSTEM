@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAILSYSTEM.DOMAIN</name>
+    </assembly>
+    <members>
+        <member name="T:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1">
+            <summary>
+            Represents an enumeration of objects with a unique numeric identifier and a name.
+            </summary>
+            <typeparam name="TEnum">The type of the enumeration.</typeparam>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1"/> class.
+            </summary>
+            <param name="id">The enumeration identifier.</param>
+            <param name="name">The enumeration name.</param>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1"/> class.
+            </summary>
+            <remarks>
+            Required for deserialization.
+            </remarks>
+        </member>
+        <member name="P:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+        </member>
+        <member name="P:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.Name">
+            <summary>
+            Gets the name.
+            </summary>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.GetValues">
+            <summary>
+            Gets the enumeration values.
+            </summary>
+            <returns>The read-only collection of enumeration values.</returns>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.FromId(System.Int32)">
+            <summary>
+            Creates an enumeration of the specified type based on the specified identifier.
+            </summary>
+            <param name="id">The enumeration identifier.</param>
+            <returns>The enumeration instance that matches the specified identifier, if it exists.</returns>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.FromName(System.String)">
+            <summary>
+            Creates an enumeration of the specified type based on the specified name.
+            </summary>
+            <param name="name">The enumeration name.</param>
+            <returns>The enumeration instance that matches the specified name, if it exists.</returns>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.Contains(System.Int32)">
+            <summary>
+            Checks if the enumeration with the specified identifier exists.
+            </summary>
+            <param name="id">The enumeration identifier.</param>
+            <returns>True if an enumeration with the specified identifier exists, otherwise false.</returns>
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.Equals(MAILSYSTEM.DOMAIN.Primitives.Enumeration{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.DOMAIN.Primitives.Enumeration`1.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:MAILSYSTEM.DOMAIN.Repositories.IListItemRepository">
+            <summary>
+            ListItem Repository Interface.
+            </summary>
+        </member>
+    </members>
+</doc>

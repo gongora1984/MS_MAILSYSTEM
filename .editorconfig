@@ -1,0 +1,77 @@
+root = true
+
+# C# files
+[*.cs]
+
+# IDE.Analyzers
+
+# CS8602: Dereference of a possibly null reference
+dotnet_diagnostic.CS8602.severity = none
+
+# CS8618: Non-nullable variable must contain a non-null value when exiting constructor. Consider declaring it as nullable.
+dotnet_diagnostic.CS8618.severity = none
+
+# StyleCop.Analyzers
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1000 : KeywordsMustBeSpacedCorrectly
+dotnet_diagnostic.SA1000.severity = none
+
+# SA1011 : ClosingSquareBracketsMustBeSpacedCorrectly
+dotnet_diagnostic.SA1011.severity = none
+
+# SA1118 : ParameterMustNotSpanMultipleLines
+dotnet_diagnostic.SA1118.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = none
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1649: File name should match first type name
+dotnet_diagnostic.SA1649.severity = none
+
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.SA1200.severity = none
+
+# SA1208: SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives
+dotnet_diagnostic.SA1208.severity = none
+
+# SA1123: DoNotPlaceRegionsWithinElements
+dotnet_diagnostic.SA1123.severity = none
+
+# SA1124: DoNotUseRegions
+dotnet_diagnostic.SA1124.severity = none
+
+# SA1614: ElementParameterDocumentationMustHaveText
+dotnet_diagnostic.SA1614.severity = none
+
+# SA1616: ElementReturnValueDocumentationMustHaveText
+dotnet_diagnostic.SA1616.severity = none
+
+# SA1009: ClosingParenthesisMustBeSpacedCorrectly
+dotnet_diagnostic.SA1009.severity = none
+
+# SA1516: Elements should be separated by blank line
+dotnet_diagnostic.SA1516.severity = none
+
+# SA1516: Elements should be separated by blank line
+dotnet_diagnostic.SA1516.severity = none
+
+
+# SonarAnalyzers.CSharp
+
+# SA1601: PartialElementsMustBeDocumented
+dotnet_diagnostic.SA1601.severity = none
