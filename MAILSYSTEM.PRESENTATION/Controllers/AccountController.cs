@@ -1,5 +1,6 @@
 ﻿using MAILSYSTEM.APPLICATION.Accounts;
 using MAILSYSTEM.DOMAIN.Contracts.Requests;
+using MAILSYSTEM.DOMAIN.Contracts.Responses;
 using MAILSYSTEM.DOMAIN.Shared;
 using MAILSYSTEM.PRESENTATION.Abstractions;
 using MediatR;
