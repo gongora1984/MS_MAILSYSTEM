@@ -5,17 +5,27 @@ namespace MAILSYSTEM.APPLICATION.Persistence.Companies.Commands.CreateCompany;
 
 internal sealed class CreateCompanyCommandHandler : ICommandHandler<CreateCompanyCommand, string>
 {
+    private readonly IApiProvider _apiProvider;
     private readonly ICompanyRepository _companyRepository;
     private readonly ICommonRepository _generalRepository;
+    private readonly ISecurityProvider _securityProvider;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public CreateCompanyCommandHandler(ICompanyRepository companyRepository, IUnitOfWork unitOfWork, IMapper mapper, ICommonRepository generalRepository)
+    public CreateCompanyCommandHandler(
+        IApiProvider apiProvider,
+        ICompanyRepository companyRepository,
+        IUnitOfWork unitOfWork,
+        IMapper mapper,
+        ICommonRepository generalRepository,
+        ISecurityProvider securityProvider)
     {
+        _apiProvider = apiProvider;
         _companyRepository = companyRepository;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _generalRepository = generalRepository;
+        _securityProvider = securityProvider;
     }
 
     public async Task<Result<string>> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
@@ -75,7 +85,8 @@ internal sealed class CreateCompanyCommandHandler : ICommandHandler<CreateCompan
         {
             companyState = stateInfo.Id.ToString(),
             companyBillingState = stateInfoBilling.Id.ToString(),
-            companyReturnState = companyReturnState
+            companyReturnState = companyReturnState,
+            companyPassword = _securityProvider.Hash(request.company.companyPassword)
         };
 
         var newCompany = _mapper.Map<Company>(requestCompany);
@@ -83,6 +94,8 @@ internal sealed class CreateCompanyCommandHandler : ICommandHandler<CreateCompan
         _companyRepository.Add(newCompany);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        _apiProvider.GenerateApiKey(newCompany);
 
         return newCompany.Id.ToString();
     }

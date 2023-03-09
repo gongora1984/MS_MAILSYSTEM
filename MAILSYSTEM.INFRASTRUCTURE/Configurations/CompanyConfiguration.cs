@@ -61,7 +61,7 @@ internal sealed class CompanyConfiguration : IEntityTypeConfiguration<Company>
             .IsUnicode(false);
 
         entity.Property(e => e.CompanyPassword)
-            .HasMaxLength(50)
+            .HasMaxLength(150)
             .IsUnicode(false);
 
         entity.Property(e => e.CompanyPhone)

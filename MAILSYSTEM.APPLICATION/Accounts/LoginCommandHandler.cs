@@ -1,20 +1,17 @@
-﻿using MAILSYSTEM.APPLICATION.Abstractions.Messaging;
-using MAILSYSTEM.DOMAIN.Abstractions;
-using MAILSYSTEM.DOMAIN.Entities;
+﻿using MAILSYSTEM.DOMAIN.Abstractions;
 using MAILSYSTEM.DOMAIN.Errors;
-using MAILSYSTEM.DOMAIN.Repositories;
 
 namespace MAILSYSTEM.APPLICATION.Accounts;
 
 internal sealed class LoginCommandHandler : ICommandHandler<LoginCommand, string>
 {
-    private readonly IApiProvider _apiProvider;
     private readonly ICompanyRepository _companyRepository;
+    private readonly ISecurityProvider _securityProvider;
 
-    public LoginCommandHandler(IApiProvider apiProvider, ICompanyRepository companyRepository)
+    public LoginCommandHandler(ICompanyRepository companyRepository, ISecurityProvider securityProvider)
     {
-        _apiProvider = apiProvider;
         _companyRepository = companyRepository;
+        _securityProvider = securityProvider;
     }
 
     public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -29,14 +26,25 @@ internal sealed class LoginCommandHandler : ICommandHandler<LoginCommand, string
                 DomainErrors.Company.InvalidUsername);
         }
 
-        if (company.CompanyPassword != request.password)
+        var matchPassword = _securityProvider.Verify(company.CompanyPassword, request.password);
+
+        if (!matchPassword)
         {
             return Result.Failure<string>(
                 DomainErrors.Company.InvalidCredentials);
         }
 
-        string token = _apiProvider.GenerateApiKey(company);
+        var loginInformation = await _companyRepository.GetApiKeyByCompanyIdAsync(company.Id);
 
-        return token;
+        if (loginInformation is null)
+        {
+            return Result.Failure<string>(
+                DomainErrors.Company.NotFoundApiKey(company.Id));
+        }
+
+        return !string.IsNullOrEmpty(loginInformation.CompanyAccessToken)
+            ? loginInformation.CompanyAccessToken
+            : Result.Failure<string>(
+                DomainErrors.Company.NotFoundApiKey(company.Id));
     }
 }

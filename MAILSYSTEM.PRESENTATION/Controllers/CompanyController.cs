@@ -44,7 +44,6 @@ public sealed class CompanyController : ApiController
         return Ok(result.Value);
     }
 
-    [AllowAnonymous]
     [HttpGet("AllCompanies", Name = "All Companies")]
     [ProducesResponseType(typeof(AllCompaniesResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -58,7 +57,7 @@ public sealed class CompanyController : ApiController
     }
 
     [AllowAnonymous]
-    [HttpGet("CompanyById/{id:guid}", Name = "Company By Id")]
+    [HttpGet("CompanyById", Name = "Company By Id")]
     [ProducesResponseType(typeof(CompanyResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -77,7 +76,7 @@ public sealed class CompanyController : ApiController
     }
 
     [AllowAnonymous]
-    [HttpGet("CompanyByName/{name}", Name = "Company By Name")]
+    [HttpGet("CompanyByName", Name = "Company By Name")]
     [ProducesResponseType(typeof(CompanyResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -96,7 +95,7 @@ public sealed class CompanyController : ApiController
     }
 
     [AllowAnonymous]
-    [HttpGet("CompanyByEmail/{email}", Name = "Company By Email")]
+    [HttpGet("CompanyByEmail", Name = "Company By Email")]
     [ProducesResponseType(typeof(CompanyResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

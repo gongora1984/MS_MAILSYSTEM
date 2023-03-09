@@ -46,6 +46,30 @@
         <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyZipUpdate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyLoginTokenValidTo">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyLoginTokenValidTo.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyLoginTokenValidTo.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyLoginTokenValidTo.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyPasswordUpdate">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyPasswordUpdate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyPasswordUpdate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyPasswordUpdate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:MAILSYSTEM.INFRASTRUCTURE.Repositories.ListItemRepository">
             <summary>
             ListItem Repository Implementation.

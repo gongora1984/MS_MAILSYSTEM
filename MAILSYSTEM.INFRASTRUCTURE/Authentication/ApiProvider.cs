@@ -9,12 +9,12 @@ internal sealed class ApiProvider : IApiProvider
     private const string _prefix = "CT-";
     private const int _numberOfSecureBytesToGenerate = 32;
     private const int _lengthOfKey = 36;
-    private readonly ApiOptions _options;
+    private readonly ApiOptions _apiOptions;
     private readonly ApplicationDbContext _dbContext;
     private readonly IUnitOfWork _unitOfWork;
-    public ApiProvider(IOptions<ApiOptions> options, ApplicationDbContext dbContext, IUnitOfWork unitOfWork)
+    public ApiProvider(IOptions<ApiOptions> apiOptions, ApplicationDbContext dbContext, IUnitOfWork unitOfWork)
     {
-        _options = options.Value;
+        _apiOptions = apiOptions.Value;
         _dbContext = dbContext;
         _unitOfWork = unitOfWork;
     }
@@ -26,13 +26,16 @@ internal sealed class ApiProvider : IApiProvider
     /// <returns></returns>
     public string GenerateApiKey(Company company)
     {
+        var expirationInYears = _apiOptions.ApiKeyExpirationYear;
         var accessToken = BuildApiKey();
         var companyLogin = new CompanyLogin
         {
             CompanyId = company.Id,
             CompanyAccessToken = accessToken,
+            CompanyAccessTokenValidTo = DateTime.Now.AddYears(expirationInYears),
             CompanyLastAccess = DateTime.UtcNow,
         };
+
         _dbContext.Set<CompanyLogin>().Add(companyLogin);
 
         _unitOfWork.SaveChangesAsync();

@@ -29,6 +29,10 @@ public static class DomainErrors
         public static readonly Error InvalidCredentials = new(
             "Company.CompanyPassword",
             "The provided credentials are invalid");
+
+        public static readonly Func<Guid, Error> NotFoundApiKey = id => new Error(
+            "Company.NotFoundApiKey",
+            $"The company with the identifier {id} has not api key assign. Please contact your administrator.");
     }
 
     public static class ListItem

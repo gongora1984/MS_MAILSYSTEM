@@ -46,9 +46,13 @@ public class ApiKeyAuthenticationHandler : AuthenticationHandler<AuthenticationS
             return AuthenticateResult.Fail("Invalid key.");
         }
 
-        if ((companyLogin.CreatedOnUtc.Date - DateTime.UtcNow.Date).Minutes > Convert.ToInt32(_apiOptions.ApiKeyExpirationMinutes))
+        ////if ((companyLogin.CreatedOnUtc.Date - DateTime.UtcNow.Date).Minutes > Convert.ToInt32(_apiOptions.ApiKeyExpirationMinutes))
+        ////{
+        ////    return AuthenticateResult.Fail("Api key expired. Please re-authenticate");
+        ////}
+        if (DateTime.UtcNow.Date > companyLogin.CompanyAccessTokenValidTo.Date)
         {
-            return AuthenticateResult.Fail("Api key expired. Please re-authenticate");
+            return AuthenticateResult.Fail("Api key expired. Please contact your administrator for a new key.");
         }
 
         return AuthenticateResult.Success(CreateTicket(companyLogin.Company));

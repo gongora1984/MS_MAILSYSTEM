@@ -3,5 +3,5 @@
 public class ApiOptions
 {
     public string ApiKeyHeaderName { get; init; }
-    public string ApiKeyExpirationMinutes { get; init; }
+    public int ApiKeyExpirationYear { get; init; }
 }

@@ -19,6 +19,11 @@ public sealed class CompanyRepository : ICompanyRepository
             .Set<Company>()
             .ToListAsync(cancellationToken);
 
+    public async Task<CompanyLogin?> GetApiKeyByCompanyIdAsync(Guid id, CancellationToken cancellationToken = default) =>
+        await _dbContext
+            .Set<CompanyLogin>()
+            .FirstOrDefaultAsync(c => c.CompanyId == id, cancellationToken);
+
     public async Task<Company?> GetByEmailAsync(string email, CancellationToken cancellationToken = default) =>
         await _dbContext
             .Set<Company>()
