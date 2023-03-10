@@ -10,40 +10,40 @@ internal sealed class MailJobDetailConfiguration : IEntityTypeConfiguration<Mail
 
         entity.HasIndex(e => e.MailJobId, "FKMailJobMailJobDetail");
 
-        entity.HasIndex(e => e.MailJobDetailChangedRecipientState, "FKStateMailJobDetailChangedRecipientState");
+        entity.HasIndex(e => e.ChangedRecipientState, "FKStateMailJobDetailChangedRecipientState");
 
         entity.HasIndex(e => e.RecipientState, "FKStateMailJobDetailRecipientState");
 
         entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-        entity.Property(e => e.MailJobDetailChangedRecipientAddress1)
+        entity.Property(e => e.ChangedRecipientAddress1)
             .HasMaxLength(250)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailChangedRecipientAddress2)
+        entity.Property(e => e.ChangedRecipientAddress2)
             .HasMaxLength(200)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailChangedRecipientCity)
+        entity.Property(e => e.ChangedRecipientCity)
             .HasMaxLength(50)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailChangedRecipientName)
+        entity.Property(e => e.ChangedRecipientName)
             .HasMaxLength(350)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailChangedRecipientZip)
+        entity.Property(e => e.ChangedRecipientZip)
             .HasMaxLength(15)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailNotSentNote)
+        entity.Property(e => e.NotSentNote)
             .HasMaxLength(1500)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDetailPostageAmount).HasColumnType("decimal(16, 3)");
+        entity.Property(e => e.PostageAmount).HasColumnType("decimal(16, 3)");
 
-        entity.Property(e => e.MailJobDetailReceivedOn).HasDefaultValueSql("(getdate())");
+        entity.Property(e => e.ReceivedOn).HasDefaultValueSql("(getdate())");
 
-        entity.Property(e => e.MailJobDetailTrackingNumber)
+        entity.Property(e => e.TrackingNumber)
             .HasMaxLength(150)
             .IsUnicode(false);
 
@@ -67,8 +67,8 @@ internal sealed class MailJobDetailConfiguration : IEntityTypeConfiguration<Mail
             .HasMaxLength(15)
             .IsUnicode(false);
 
-        entity.HasOne(d => d.MailJobDetailChangedRecipientStateNavigation).WithMany(p => p.MailJobDetailMailJobDetailChangedRecipientStateNavigations)
-            .HasForeignKey(d => d.MailJobDetailChangedRecipientState)
+        entity.HasOne(d => d.ChangedRecipientStateNavigation).WithMany(p => p.ChangedRecipientStateNavigations)
+            .HasForeignKey(d => d.ChangedRecipientState)
             .HasConstraintName("FKStateMailJobDetailChangedRecipientState");
 
         entity.HasOne(d => d.MailJob).WithMany(p => p.MailJobDetails)
@@ -76,7 +76,7 @@ internal sealed class MailJobDetailConfiguration : IEntityTypeConfiguration<Mail
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FKMailJobMailJobDetail");
 
-        entity.HasOne(d => d.RecipientStateNavigation).WithMany(p => p.MailJobDetailRecipientStateNavigations)
+        entity.HasOne(d => d.RecipientStateNavigation).WithMany(p => p.RecipientStateNavigations)
             .HasForeignKey(d => d.RecipientState)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FKStateMailJobDetailRecipientState");

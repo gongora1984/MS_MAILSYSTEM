@@ -12,59 +12,59 @@ internal sealed class MailJobConfiguration : IEntityTypeConfiguration<MailJob>
 
         entity.HasIndex(e => e.EnvelopTypeId, "FKMailJobListItemEnvelopType");
 
-        entity.HasIndex(e => e.MailJobPropertyState, "FKStateMailJobPropertyState");
+        entity.HasIndex(e => e.PropertyState, "FKStatePropertyState");
 
         entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
-        entity.Property(e => e.MailJobCustomData1)
+        entity.Property(e => e.CustomData1)
             .HasMaxLength(150)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobCustomData2)
+        entity.Property(e => e.CustomData2)
             .HasMaxLength(150)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobCustomData3)
+        entity.Property(e => e.CustomData3)
             .HasMaxLength(150)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDocumentNameOnly)
+        entity.Property(e => e.DocumentNameOnly)
             .HasMaxLength(150)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobDocumentPath)
+        entity.Property(e => e.DocumentPath)
             .HasMaxLength(1500)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobEnvelopeCaption1)
+        entity.Property(e => e.EnvelopeCaption1)
             .HasMaxLength(250)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobEnvelopeCaption2)
+        entity.Property(e => e.EnvelopeCaption2)
             .HasMaxLength(250)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobKeyNumber)
+        entity.Property(e => e.KeyNumber)
             .HasMaxLength(50)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobMailJobPropertyCity)
+        entity.Property(e => e.PropertyCity)
             .HasMaxLength(50)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobMailJobPropertyZip)
+        entity.Property(e => e.PropertyZip)
             .HasMaxLength(15)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobPropertyAddress1)
+        entity.Property(e => e.PropertyAddress1)
             .HasMaxLength(250)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobPropertyAddress2)
+        entity.Property(e => e.PropertyAddress2)
             .HasMaxLength(200)
             .IsUnicode(false);
 
-        entity.Property(e => e.MailJobTotalPostage).HasColumnType("decimal(16, 2)");
+        entity.Property(e => e.TotalPostage).HasColumnType("decimal(16, 2)");
 
         entity.HasOne(d => d.Company).WithMany(p => p.MailJobs)
             .HasForeignKey(d => d.CompanyId)
@@ -77,7 +77,7 @@ internal sealed class MailJobConfiguration : IEntityTypeConfiguration<MailJob>
             .HasConstraintName("FKMailJobListItemEnvelopType");
 
         entity.HasOne(d => d.MailJobPropertyStateNavigation).WithMany(p => p.MailJobs)
-            .HasForeignKey(d => d.MailJobPropertyState)
+            .HasForeignKey(d => d.PropertyState)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FKStateMailJobPropertyState");
     }

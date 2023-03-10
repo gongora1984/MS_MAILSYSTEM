@@ -101,16 +101,16 @@ internal sealed class CompanyConfiguration : IEntityTypeConfiguration<Company>
             .IsUnicode(false)
             .HasColumnName("CompanyZip");
 
-        entity.HasOne(d => d.CompanyBillingStateNavigation).WithMany(p => p.CompanyCompanyBillingStateNavigations)
+        entity.HasOne(d => d.CompanyBillingStateNavigation).WithMany(p => p.CompanyBillingStateNavigations)
             .HasForeignKey(d => d.CompanyBillingState)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FKStateCompanyBillingState");
 
-        entity.HasOne(d => d.CompanyReturnStateNavigation).WithMany(p => p.CompanyCompanyReturnStateNavigations)
+        entity.HasOne(d => d.CompanyReturnStateNavigation).WithMany(p => p.CompanyReturnStateNavigations)
             .HasForeignKey(d => d.CompanyReturnState)
             .HasConstraintName("FKStateCompanyReturnState");
 
-        entity.HasOne(d => d.CompanyStateNavigation).WithMany(p => p.CompanyCompanyStateNavigations)
+        entity.HasOne(d => d.CompanyStateNavigation).WithMany(p => p.CompanyStateNavigations)
             .HasForeignKey(d => d.CompanyState)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FKStateCompanyState");

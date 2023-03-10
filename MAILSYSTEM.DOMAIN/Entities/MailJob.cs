@@ -10,47 +10,47 @@ public partial class MailJob : Entity, IAuditableEntity
 
     public Guid CompanyId { get; set; }
 
-    public string? MailJobKeyNumber { get; set; }
+    public string? KeyNumber { get; set; }
 
-    public int? MailJobPages { get; set; }
+    public int? Pages { get; set; }
 
-    public int? MailJobCopies { get; set; }
+    public int? Copies { get; set; }
 
-    public decimal? MailJobTotalPostage { get; set; }
+    public decimal? TotalPostage { get; set; }
 
-    public DateTime MailJobReceivedOn { get; set; }
+    public DateTime ReceivedOn { get; set; }
 
-    public DateTime? MailJobVerifiedOn { get; set; }
+    public DateTime? VerifiedOn { get; set; }
 
-    public DateTime? MailJobPrintedOn { get; set; }
+    public DateTime? PrintedOn { get; set; }
 
-    public DateTime? MailJobSendOutOn { get; set; }
+    public DateTime? SendOutOn { get; set; }
 
-    public string MailJobDocumentNameOnly { get; set; } = null!;
+    public string DocumentNameOnly { get; set; } = null!;
 
-    public string MailJobDocumentPath { get; set; } = null!;
+    public string DocumentPath { get; set; } = null!;
 
-    public string MailJobPropertyAddress1 { get; set; } = null!;
+    public string PropertyAddress1 { get; set; } = null!;
 
-    public string? MailJobPropertyAddress2 { get; set; }
+    public string? PropertyAddress2 { get; set; }
 
-    public string MailJobMailJobPropertyCity { get; set; } = null!;
+    public string PropertyCity { get; set; } = null!;
 
-    public Guid MailJobPropertyState { get; set; }
+    public Guid PropertyState { get; set; }
 
-    public string MailJobMailJobPropertyZip { get; set; } = null!;
+    public string PropertyZip { get; set; } = null!;
 
-    public bool MailJobVoided { get; set; }
+    public bool Voided { get; set; }
 
-    public string? MailJobCustomData1 { get; set; }
+    public string? CustomData1 { get; set; }
 
-    public string? MailJobCustomData2 { get; set; }
+    public string? CustomData2 { get; set; }
 
-    public string? MailJobCustomData3 { get; set; }
+    public string? CustomData3 { get; set; }
 
-    public string? MailJobEnvelopeCaption1 { get; set; }
+    public string? EnvelopeCaption1 { get; set; }
 
-    public string? MailJobEnvelopeCaption2 { get; set; }
+    public string? EnvelopeCaption2 { get; set; }
 
     public virtual Company Company { get; set; } = null!;
 

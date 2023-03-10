@@ -20,45 +20,45 @@ public partial class MailJobDetail : Entity, IAuditableEntity
 
     public string RecipientZip { get; set; } = null!;
 
-    public DateTime MailJobDetailReceivedOn { get; set; }
+    public DateTime ReceivedOn { get; set; }
 
-    public DateTime? MailJobDetailVerifiedOn { get; set; }
+    public DateTime? VerifiedOn { get; set; }
 
-    public DateTime? MailJobDetailPrintedOn { get; set; }
+    public DateTime? PrintedOn { get; set; }
 
-    public DateTime? MailJobDetailSentOutOn { get; set; }
+    public DateTime? SentOutOn { get; set; }
 
-    public decimal? MailJobDetailPostageAmount { get; set; }
+    public decimal? PostageAmount { get; set; }
 
-    public string? MailJobDetailTrackingNumber { get; set; }
+    public string? TrackingNumber { get; set; }
 
-    public string? MailJobDetailNotSentNote { get; set; }
+    public string? NotSentNote { get; set; }
 
-    public bool MailJobDetailVoided { get; set; }
+    public bool Voided { get; set; }
 
-    public bool MailJobDetailWasCorrected { get; set; }
+    public bool WasCorrected { get; set; }
 
-    public DateTime? MailJobDetailCorrectedOn { get; set; }
+    public DateTime? CorrectedOn { get; set; }
 
-    public string? MailJobDetailChangedRecipientName { get; set; }
+    public string? ChangedRecipientName { get; set; }
 
-    public string? MailJobDetailChangedRecipientAddress1 { get; set; }
+    public string? ChangedRecipientAddress1 { get; set; }
 
-    public string? MailJobDetailChangedRecipientAddress2 { get; set; }
+    public string? ChangedRecipientAddress2 { get; set; }
 
-    public string? MailJobDetailChangedRecipientCity { get; set; }
+    public string? ChangedRecipientCity { get; set; }
 
-    public Guid? MailJobDetailChangedRecipientState { get; set; }
+    public Guid? ChangedRecipientState { get; set; }
 
-    public string? MailJobDetailChangedRecipientZip { get; set; }
+    public string? ChangedRecipientZip { get; set; }
 
-    public bool MailJobDetailWasReturned { get; set; }
+    public bool WasReturned { get; set; }
 
-    public DateTime? MailJobDetailReturnedOn { get; set; }
+    public DateTime? ReturnedOn { get; set; }
 
     public virtual MailJob MailJob { get; set; } = null!;
 
-    public virtual State? MailJobDetailChangedRecipientStateNavigation { get; set; }
+    public virtual State? ChangedRecipientStateNavigation { get; set; }
 
     public virtual State RecipientStateNavigation { get; set; } = null!;
 }

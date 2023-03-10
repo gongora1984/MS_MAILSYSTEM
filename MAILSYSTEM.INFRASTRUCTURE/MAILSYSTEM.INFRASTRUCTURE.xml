@@ -70,6 +70,18 @@
         <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.CompanyPasswordUpdate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:MAILSYSTEM.INFRASTRUCTURE.Migrations.UpdateTablesAndFields">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.UpdateTablesAndFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.UpdateTablesAndFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MAILSYSTEM.INFRASTRUCTURE.Migrations.UpdateTablesAndFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:MAILSYSTEM.INFRASTRUCTURE.Repositories.ListItemRepository">
             <summary>
             ListItem Repository Implementation.
