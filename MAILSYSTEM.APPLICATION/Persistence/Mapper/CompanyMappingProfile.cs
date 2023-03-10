@@ -1,7 +1,6 @@
-﻿using MAILSYSTEM.DOMAIN.Contracts.Requests;
-using MAILSYSTEM.DOMAIN.Contracts.Responses.Companies;
+﻿using MAILSYSTEM.DOMAIN.Contracts.Responses.Companies;
 
-namespace MAILSYSTEM.APPLICATION.Persistence.Companies.Mapper;
+namespace MAILSYSTEM.APPLICATION.Persistence.Mapper;
 
 public class CompanyMappingProfile : Profile
 {

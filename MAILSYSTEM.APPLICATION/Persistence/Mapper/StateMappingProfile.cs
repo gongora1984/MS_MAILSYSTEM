@@ -1,7 +1,7 @@
 ﻿using MAILSYSTEM.DOMAIN.Contracts.Requests;
 using MAILSYSTEM.DOMAIN.Contracts.Responses.States;
 
-namespace MAILSYSTEM.APPLICATION.Persistence.States.Mapper;
+namespace MAILSYSTEM.APPLICATION.Persistence.Mapper;
 
 public class StateMappingProfile : Profile
 {

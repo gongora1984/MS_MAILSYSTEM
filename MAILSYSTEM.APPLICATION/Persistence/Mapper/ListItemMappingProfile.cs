@@ -1,7 +1,7 @@
 ﻿using MAILSYSTEM.DOMAIN.Contracts.Requests;
 using MAILSYSTEM.DOMAIN.Contracts.Responses.ListItems;
 
-namespace MAILSYSTEM.APPLICATION.Persistence.ListItems.Mapper;
+namespace MAILSYSTEM.APPLICATION.Persistence.Mapper;
 
 public class ListItemMappingProfile : Profile
 {

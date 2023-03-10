@@ -1,13 +1,13 @@
-﻿namespace MAILSYSTEM.APPLICATION.Persistence.States.Mapper;
+﻿namespace MAILSYSTEM.APPLICATION.Persistence.Mapper;
 
-public static class StateMapper
+public static class CompanyMapper
 {
     private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
     {
         var config = new MapperConfiguration(cfg =>
         {
             cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
-            cfg.AddProfile<StateMappingProfile>();
+            cfg.AddProfile<CompanyMappingProfile>();
         });
 
         var mapper = config.CreateMapper();

@@ -1,4 +1,4 @@
-﻿namespace MAILSYSTEM.APPLICATION.Persistence.ListItems.Mapper;
+﻿namespace MAILSYSTEM.APPLICATION.Persistence.Mapper;
 
 public static class ListItemMapper
 {
